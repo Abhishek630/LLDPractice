@@ -1,13 +1,13 @@
 import java.util.Objects;
 
 public class Pen extends StationeryItem {
-    String type;
-    Boolean refillable;
+    private String type;
+    private Boolean IsRefillable;
 
-    public Pen(String brand, String color, double price, String type, Boolean refillable) {
+    public Pen(String brand, String color, double price, String type, Boolean IsRefillable) {
         super(brand, price,color);
         this.type = type;
-        this.refillable = refillable;
+        this.IsRefillable = IsRefillable;
     }
 
 
@@ -15,12 +15,12 @@ public class Pen extends StationeryItem {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Pen pen = (Pen) o;
-        return Double.compare(price, pen.price) == 0 && Objects.equals(brand, pen.brand) && Objects.equals(color, pen.color) && Objects.equals(type, pen.type) && Objects.equals(refillable, pen.refillable);
+        return Double.compare(price, pen.price) == 0 && Objects.equals(brand, pen.brand) && Objects.equals(color, pen.color) && Objects.equals(type, pen.type) && Objects.equals(IsRefillable, pen.IsRefillable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(brand, color, price, type, refillable);
+        return Objects.hash(brand, color, price, type, IsRefillable);
     }
 
 
@@ -31,7 +31,7 @@ public class Pen extends StationeryItem {
                 ", color='" + color + '\'' +
                 ", price=" + price +
                 ", type='" + type + '\'' +
-                ", refillable=" + refillable +
+                ", refillable=" + IsRefillable +
                 '}';
     }
 
@@ -45,11 +45,11 @@ public class Pen extends StationeryItem {
     }
 
     public Boolean getRefillable() {
-        return refillable;
+        return IsRefillable;
     }
 
     public void setRefillable(Boolean refillable) {
-        this.refillable = refillable;
+        this.IsRefillable = refillable;
     }
 
 
@@ -59,7 +59,7 @@ public class Pen extends StationeryItem {
         System.out.println("Color " + color);
         System.out.println("Price " + getPrice());
         System.out.println("Type " + type);
-        System.out.println("Refillable "+ refillable);
+        System.out.println("Refillable "+ IsRefillable);
     }
 
 

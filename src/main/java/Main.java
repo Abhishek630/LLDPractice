@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
 
         DiscountStrategy strategy = new TenPercentDiscount();
+        DiscountStrategy hpStrategy = new HighPriceDiscount();
+
         Pen pen1 = new Pen("Parker", "Black", 120d, "Ink", true);
         System.out.println("Before Discount");
         pen1.showDisplay();
