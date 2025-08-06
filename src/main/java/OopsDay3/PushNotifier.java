@@ -1,6 +1,6 @@
 package OopsDay3;
 
-public class PushNotifier extends INotifier {
+public class PushNotifier implements INotifier {
 
     @Override
     public void sendNotification(String msg) {

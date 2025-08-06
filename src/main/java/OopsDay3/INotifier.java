@@ -1,7 +1,7 @@
 package OopsDay3;
 
-public abstract class INotifier {
+public interface INotifier {
 
-    public abstract void sendNotification(String msg);
+     void sendNotification(String msg);
 
 }

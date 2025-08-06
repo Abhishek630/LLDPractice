@@ -1,30 +1,20 @@
 package OopsDay3;
 
+import java.util.List;
+
 public class NotificationService {
 
-    PushNotifier pushNotifier;
-    SMSNotifier smsNotifier;
-    EmailNotifier emailNotifier;
+    List<INotifier> notifierList;
 
-    public NotificationService(PushNotifier pushNotifier, SMSNotifier smsNotifier, EmailNotifier emailNotifier) {
-        this.pushNotifier = pushNotifier;
-        this.smsNotifier = smsNotifier;
-        this.emailNotifier = emailNotifier;
+    public NotificationService(List<INotifier> notifierList) {
+        this.notifierList = notifierList;
     }
 
-    public void sendEmail(String msg){
-        emailNotifier.sendNotification(msg);
-        addLog("EMail Logged");
-    }
-
-    public void sendSMS(String msg){
-        smsNotifier.sendNotification(msg);
-        addLog("SMS Logged");
-    }
-
-    public void sendPush(String msg){
-        pushNotifier.sendNotification(msg);
-        addLog("Push Logged");
+    public void notifyAll(String msg, String log){
+        for(INotifier iNotifier : notifierList) {
+            iNotifier.sendNotification(msg);
+            addLog(log);
+        }
     }
 
     private void addLog(String log){
