@@ -9,9 +9,9 @@ public class Logger {
     }
 
     public static Logger getLogger() {
-        if(logger == null){
+        if(logger == null){  //For optimization
             synchronized (Logger.class){
-                if(logger == null) {
+                if(logger == null) { //Thread safe
                     logger = new Logger();
                 }// New  instance done only when logger doesn't exist
             }
